@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import DarkMode from './darkMode/dark-mode.jsx'
 import MainTela from './telaPrincipal/mainTela.jsx'
+import DarkMode from './darkMode/dark-mode.jsx'
 
 const routes = createBrowserRouter([
   {

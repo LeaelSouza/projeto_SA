@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useState } from 'react';
 
 function DarkMode() {
-  const [modoEscuro, setModoEscuro] = useState();
+  const [modoEscuro, setModoEscuro] = useState([]);
 
   const alternarModoEscuro = () => {
     setModoEscuro(!modoEscuro);
