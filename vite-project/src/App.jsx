@@ -2,11 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import DarkMode from './darkMode/dark-mode.jsx';
+import MainTela from './telaPrincipal/mainTela.jsx';
 
 function App() {
   return <>
-    <DarkMode />
+    <MainTela />
   </>
 
   // const [count, setCount] = useState(0);

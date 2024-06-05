@@ -4,11 +4,12 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import DarkMode from './darkMode/dark-mode.jsx'
+import MainTela from './telaPrincipal/mainTela.jsx'
 
 const routes = createBrowserRouter([
   {
     path: '/',
-    element: <DarkMode />,
+    element: <MainTela />,
     children: [
       {
         path: '/dark-mode',

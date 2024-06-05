@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './dark-mode/dark-mode.jsx';
 
 function DarkMode() {
   const [modoEscuro, setModoEscuro] = useState();
