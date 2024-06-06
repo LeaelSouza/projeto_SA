@@ -6,9 +6,14 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import MainTela from './telaPrincipal/mainTela.jsx'
 import DarkMode from './darkMode/dark-mode.jsx'
 import CadastroUsuario from './usuario/cadastroUsuario/cadastroUsuario.jsx'
+import TelaInicio from './TelaInicial/inicio.jsx'
 
 const routes = createBrowserRouter([
   {
+
+    path: '/',
+    element: <TelaInicio />,
+
     children: [
       {
         path: '/',
