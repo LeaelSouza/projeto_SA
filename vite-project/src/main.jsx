@@ -5,7 +5,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import MainTela from './telaPrincipal/mainTela.jsx'
 import DarkMode from './darkMode/dark-mode.jsx'
-import cadastroUsuario from './usuario/cadastroUsuario/cadastroUsuário.jsx'
+import CadastroUsuario from './usuario/cadastroUsuario/cadastroUsuario.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -20,7 +20,7 @@ const routes = createBrowserRouter([
       },
       {
         path: '/cadastroUsuario',
-        element: <cadastroUsuario />
+        element: <CadastroUsuario />
       }
     ]
   }

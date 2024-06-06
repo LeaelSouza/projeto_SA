@@ -6,12 +6,12 @@
 //- Número de telefone
 //- Senha até 30 dígitos
 
-function cadastroUsuario(){
+function CadastroUsuario(){
     return (
         <>
-        <input type="text">Nome: </input> 
+        <h1>Oi</h1>
         </>
     )
 }
 
-export default cadastroUsuario;
+export default CadastroUsuario;

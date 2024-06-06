@@ -5,7 +5,7 @@ function DarkMode() {
   const [modoEscuro, setModoEscuro] = useState([]);
 
   const alternarModoEscuro = () => {
-    setModoEscuro('!modoEscuro');
+    setModoEscuro(!modoEscuro);
   };
 
   return (
