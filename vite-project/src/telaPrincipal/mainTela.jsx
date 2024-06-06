@@ -10,6 +10,10 @@ function MainTela(){
         <>
         <h1>Tela Principal</h1>
         <Link to={'/dark-mode'}>Dark-Mode</Link>
+        <br></br>
+        <Link to={'/'}>Tela Principal</Link>
+        <br></br>
+        <Link to={'/cadastroUsuario'}>Cadastro</Link>
         <Outlet />
         </>
     )
