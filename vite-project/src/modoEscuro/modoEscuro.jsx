@@ -11,7 +11,7 @@ function ModoEscuro() {
   return (
     <>
       <Link to={'/'}>Início</Link>
-      <h1>Nosso projeto</h1>
+      <h1 className={modoEscuro?'escuro': 'root'}>Nosso projeto</h1>
       <button onClick={alternarModoEscuro}>
         {modoEscuro ? 'Modo Claro' : 'Modo Escuro'}
       </button>
