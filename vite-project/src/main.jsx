@@ -16,7 +16,7 @@ const routes = createBrowserRouter([
 
     children: [
       {
-        path: '/',
+        path: '/mainTela',
         element: <MainTela />,
       },
       {

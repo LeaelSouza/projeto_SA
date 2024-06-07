@@ -6,7 +6,7 @@ function TelaInicio(){
         <h1>Inicio</h1>
         <Link to={'/dark-mode'}>Dark-Mode</Link>
         <br></br>
-        <Link to={'/'}>Tela Principal</Link>
+        <Link to={'/mainTela'}>Tela Principal</Link>
         <br></br>
         <Link to={'/cadastroUsuario'}>Cadastro</Link>
         <Outlet />
