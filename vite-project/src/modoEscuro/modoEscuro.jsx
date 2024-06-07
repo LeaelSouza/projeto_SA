@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function DarkMode() {
+function ModoEscuro() {
   const [modoEscuro, setModoEscuro] = useState([]);
 
   const alternarModoEscuro = () => {
@@ -9,10 +9,8 @@ function DarkMode() {
   };
 
   return (
-
-    // <div className={`DarkMode ${modoEscuro ? 'escuro' : ''}`}>
     <>
-      <Link to={'/'}>Tela Principal</Link>
+      <Link to={'/'}>Início</Link>
       <h1>Nosso projeto</h1>
       <button onClick={alternarModoEscuro}>
         {modoEscuro ? 'Modo Claro' : 'Modo Escuro'}
@@ -21,4 +19,4 @@ function DarkMode() {
   );
 }
 
-export default DarkMode;
+export default ModoEscuro;
