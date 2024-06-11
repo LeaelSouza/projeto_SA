@@ -8,7 +8,9 @@ function TelaInicio(){
         <br></br>
         <Link to={'/modoEscuro'}>Modo Escuro</Link>
         <br></br>
-        <Link to={'/cadastroUsuario'}>Cadastro</Link>
+        <Link to={'/cadastroUsuario'}>Cadastro de usuário</Link>
+        <br></br>
+        <Link to={'anuncioCarro'}>Cadastro de anuncio de carros</Link>
         <Outlet />
         </>
     )

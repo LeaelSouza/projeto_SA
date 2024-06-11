@@ -7,6 +7,7 @@ import TelaInicio from './TelaInicial/inicio.jsx'
 import ModoEscuro from './modoEscuro/modoEscuro.jsx'
 import CadastroUsuario from './usuario/cadastroUsuario/cadastroUsuario.jsx'
 import TelaPrincipal from './telaPrincipal/telaPrincipal.jsx'
+import AnuncioCarro from './telaAnuncios/anuncioCarro/anuncioCarro.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const routes = createBrowserRouter([
       {
         path: '/cadastroUsuario',
         element: <CadastroUsuario />
+      },
+      {
+        path: '/anuncioCarro',
+        element: <AnuncioCarro/>
       }
 ]);
 
