@@ -18,19 +18,18 @@ function CadastroUsuario(){
     return (
         <>
         <Link to={'/'}>Início</Link>
-        <h1>Cadastro de Usuário</h1>
+        <h1>Anúncio do seu veículo</h1>
 
         <label htmlFor="carro">Carro: </label>
         <input type="text" placeholder="Digite o nome do carro" />
         <br></br>
-        <label htmlFor="email">Email: </label>
-        <input type="text" placeholder="Digite seu email" />
+        <label htmlFor="valor">Valor do veículo: </label>
+        <input type="text" placeholder="Digite o valor do veículo" />
         <br></br>
-        <label htmlFor="telefone">Telefone: </label>
+        <label htmlFor="telefone">Telefones para contato: </label>
         <input type="number" placeholder="Digite seu telefone" />
         <br></br>
-        <label htmlFor="senha">Senha: </label>
-        <input type="password" placeholder="Sua senha até 9 dígitos" />
+        {/*Desenvolver a opção para adicionar foto*/ }
         <br></br>
         <br></br>
         <button onClick={Cadastrar}>Cadastrar</button>
