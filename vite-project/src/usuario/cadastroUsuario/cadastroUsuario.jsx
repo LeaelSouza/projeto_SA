@@ -5,44 +5,66 @@
 //- E-mail
 //- Número de telefone
 //- Senha até 30 dígitos
-import { useState } from "react";
+
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
-function Cadastrar(){
-    
-    const [nome, setNome] = useState('');
-    const [senha, setSenha] = useState('');
+function CadastroUsuario() {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [enviado, setEnviado] = useState(false);
+  const [modoEscuro, setModoEscuro] = useState(false);
 
-    setListaCadastro({
-        nome: nome,
-        email: email,
-        telefone: telefone,
-        senha: senha
-    })
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setEnviado(true);
+  };
 
-function CadastroUsuario(){
-    return (
-        <>
+function alterarModo() {
+    setModoEscuro(!modoEscuro);
+};
+
+  return (
+    <body className={modoEscuro? 'escuro' : 'root'}>
+        <div>
         <Link to={'/'}>Início</Link>
-        <h1>Cadastro de Usuário</h1>
+        <br></br>
+        <br></br>
+        <button onClick={alterarModo}>{modoEscuro ? 'Modo Claro' : 'Modo Escuro'}</button>
+        <h1>Cadastro</h1>
+        <form onSubmit={handleSubmit}>
 
-        <label htmlFor="nome">Nome: </label>
-        <input type="text" placeholder="Digite seu nome completo" />
-        <br></br>
-        <label htmlFor="email">Email: </label>
-        <input type="text" placeholder="Digite seu email" />
-        <br></br>
-        <label htmlFor="telefone">Telefone: </label>
-        <input type="number" placeholder="Digite seu telefone" />
-        <br></br>
-        <label htmlFor="senha">Senha: </label>
-        <input type="password" placeholder="Sua senha até 9 dígitos" />
-        <br></br>
-        <br></br>
-        <button onClick={Cadastrar}>Cadastrar</button>
-        </>
-    )
+            <label htmlFor="nome"><b>Nome: </b></label>
+            <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Digite seu nome completo" />
+            <br></br>
+            <label htmlFor="email"><b>Email: </b></label>
+            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
+            <br></br>
+            <label htmlFor="senha"><b>Senha: </b></label>
+            <input type="text" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Sua senha até 9 dígitos" />
+            <br></br>
+            <label htmlFor="telefone"><b>Telefone: </b></label>
+            <input type="text" value={telefone} onChange={(e) => setTelefone(e.target.value)} placeholder="Digite seu telefone" />
+            <br></br>
+            <br></br>
+            <button type="submit">Cadastrar</button>
+        </form>
+        {/* DADOS NA TELA */}
+
+        {enviado && (
+            <div>
+            <h2>Dados cadastrados:</h2>
+            <p>Nome: {nome}</p>
+            <p>Email: {email}</p>
+            <p>Senha: {senha}</p>
+            <p>Telefone: {telefone}</p>
+            </div>
+         )}
+        </div>
+    </body>
+  );
 }
 
 export default CadastroUsuario;
