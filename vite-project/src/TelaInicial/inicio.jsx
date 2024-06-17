@@ -1,5 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import React, { useState } from 'react';
+import "./inicio.css";
 
 function TelaInicio(){
     const [modoEscuro, setModoEscuro] = useState(false);

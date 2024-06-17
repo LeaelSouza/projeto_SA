@@ -1,49 +1,6 @@
-// //ANUNCIO PARA O CARRO
-//import { useState } from "react";
-// import { Link } from "react-router-dom";
-
-// function Cadastrar(){
-    
-//     const [nome, setNome] = useState('');
-//     const [senha, setSenha] = useState('');
-
-//     setListaCadastro({
-//         nome: nome,
-//         email: email,
-//         telefone: telefone,
-//         senha: senha
-//     })
-// }
-
-
-
-// function CadastroUsuario(){
-//     return (
-//         <>
-//         <Link to={'/'}>Início</Link>
-//         <h1>Anúncio do seu veículo</h1>
-
-//         <label htmlFor="carro">Carro: </label>
-//         <input type="text" placeholder="Digite o nome do carro" />
-//         <br></br>
-//         <label htmlFor="valor">Valor do veículo: </label>
-//         <input type="text" placeholder="Digite o valor do veículo" />
-//         <br></br>
-//         <label htmlFor="telefone">Telefones para contato: </label>
-//         <input type="number" placeholder="Digite seu telefone" />
-//         <br></br>
-//         {/*Desenvolver a opção para adicionar foto*/ }
-//         <br></br>
-//         <br></br>
-//         <button onClick={Cadastrar}>Cadastrar</button>
-//         </>
-//     )
-// }
-
-// export default CadastroUsuario;
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./anuncioCarro.css";
 
 function Cadastrar(email, telefone, foto) {
     // Aqui você pode adicionar a lógica para lidar com o cadastro, como enviar os dados para um servidor.
@@ -55,15 +12,15 @@ function Cadastrar(email, telefone, foto) {
 }
 
 function CadastroUsuario() {
-    const [email, setEmail] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [carro, setCarro] = useState('');
-    const [valor, setValor] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [foto, setFoto] = useState(null);
+    const [cassificacaoCarro, setCassificacaoCarro] = useState('');
+    const [modeloCarro, setModeloCarro] = useState('');
+    const [anoCarro, setAnoCarro] = useState('');
+    const [precoCarro, setPrecoCarro] = useState('');
+    const [descricaoCarro, setDescricaoCarro] = useState('');
+    const [imagem, setImagem] = useState(null);
 
     const handleSubmit = () => {
-        Cadastrar(email, telefone, carro, valor,descricao, foto);
+        Cadastrar(cassificacaoCarro, modeloCarro, anoCarro, precoCarro, descricaoCarro, imagem);
     };
 
     const handleFotoChange = (e) => {
@@ -76,29 +33,30 @@ function CadastroUsuario() {
      console.log('Error: ', error);
    };
 
-        setFoto(e.target.files[0]);
+        setImagem(e.target.files[0]);
     };
 
     return (
         <>
             <Link to={'/'}>Início</Link>
-            <h1>Anúncio do seu veículo</h1>
+            <h1 className="titulo">Anúncio do seu veículo</h1>
 
-            <label htmlFor="email">Email: </label>
-            <input type="email" placeholder="Digite seu email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <label htmlFor="cassificacaoCarro">Classificação do carro: </label>
+            <input type="cassificacaoCarro" placeholder="Insira a classificação do carro" value={cassificacaoCarro} onChange={(e) => setCassificacaoCarro(e.target.value)} />
             <br />
-            <label htmlFor="telefone">Telefone: </label>
-            <input type="number" placeholder="Digite seu telefone" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+            <label htmlFor="modeloCarro">Modelo do carro: </label>
+            <input type="text" placeholder="Digite o modelo do carro" value={modeloCarro} onChange={(e) => setModeloCarro(e.target.value)} />
             <br />
-            <label htmlFor="carro">Carro: </label>
-            <input type="text" placeholder="Digite o nome do carro" value={carro} onChange={(e) => setCarro(e.target.value)} />
+            <label htmlFor="anoCarro">Ano do carro: </label>
+            <input type="anoCarro" placeholder="Digite o ano do carro" value={anoCarro} onChange={(e) => setAnoCarro(e.target.value)} />
             <br />
-            <label htmlFor="valor">Valor do veículo: </label>
-            <input type="text" placeholder="Digite o valor do veículo" value={valor} onChange={(e) => setValor(e.target.value)}/>
+            <label htmlFor="precoCarro">Valor do veículo: </label>
+            <input type="text" placeholder="Digite o valor do veículo" value={precoCarro} onChange={(e) => setPrecoCarro(e.target.value)}/>
+            <br /><br/>
+            {/* adicionar limite para descricao */}
+            <textarea className="descricaoCarro" type="text" placeholder="Insira a descrição" value={descricaoCarro} onChange={(e) => setDescricaoCarro(e.target.value)}/>
             <br />
-            <input className="descricao" type="text" placeholder="Insira a descrição"></input>
-            <br />
-            <label htmlFor="foto">Foto do veículo: </label>
+            <label htmlFor="imagem">Foto do veículo: </label>
             <input type="file" onChange={handleFotoChange} />
             <br /><br />
             <button onClick={handleSubmit}>Cadastrar</button>
