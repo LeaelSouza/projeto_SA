@@ -11,7 +11,7 @@ function LoginUsuario() {
         <div>
             <h1>Login</h1>
 
-            <label htmlFor="email">Email: </label>
+            <label htmlFor="email"><b>Email: </b></label>
             <input
             type="email"
             id="email"
@@ -19,7 +19,7 @@ function LoginUsuario() {
             placeholder="Digite seu email"
             />
             <br></br>
-            <label htmlFor="senha">Senha: </label>
+            <label htmlFor="senha"><b>Senha: </b></label>
             <input
             type="senha"
             id="senha"
