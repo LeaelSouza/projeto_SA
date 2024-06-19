@@ -2,79 +2,100 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./anuncioCarro.css";
 
-function Cadastrar(email, telefone, foto) {
+function Cadastrar(classificação, modeloCarro, anoCarro, precoCarro, descricao, imagem) {
     // Aqui você pode adicionar a lógica para lidar com o cadastro, como enviar os dados para um servidor.
     console.log({
-        email: email,
-        telefone: telefone,
-        foto: foto
+        classificação: classificação,
+        modeloCarro: modeloCarro,
+        anoCarro: anoCarro,
+        precoCarro: precoCarro,
+        descricao: descricao,
+        imagem: imagem
     });
 }
 
 function CadastroUsuario() {
-    const [cassificacaoCarro, setCassificacaoCarro] = useState('');
+    const [classificacaoCarro, setClassificacaoCarro] = useState('');
     const [modeloCarro, setModeloCarro] = useState('');
     const [anoCarro, setAnoCarro] = useState('');
     const [precoCarro, setPrecoCarro] = useState('');
     const [descricaoCarro, setDescricaoCarro] = useState('');
     const [imagem, setImagem] = useState(null);
+    const [imagemPreview, setImagemPreview] = useState(null);
     const [enviado, setEnviado] = useState(false);
 
     const handleSubmit = (e) => {
-        Cadastrar(cassificacaoCarro, modeloCarro, anoCarro, precoCarro, descricaoCarro, imagem);
+        Cadastrar(classificacaoCarro, modeloCarro, anoCarro, precoCarro, descricaoCarro, imagem);
         
         e.preventDefault();
         setEnviado(true);
     };
 
     const handleFotoChange = (e) => {
-        var reader = new FileReader();
-        reader.readAsDataURL(e.target.files[0]);
-        reader.onload = function () {
-        console.log(reader.result);
-    };
-   reader.onerror = function (error) {
-     console.log('Error: ', error);
-   };
 
-        setImagem(e.target.files[0]);
+        //Verifica se um arquivo foi selecionado
+        if(e.target.files && e.target.files[0]){
+            const file = e.target.files[0];
+
+            if(file.type.startsWith('image/')){
+
+                var reader = new FileReader();
+
+                reader.readAsDataURL(file);
+
+                    reader.onload = function(){
+                        setImagemPreview(reader.result);
+                        console.log(reader.result);
+                    };
+
+                reader.onerror = function (error){
+                    console.log('Error: ', error);
+                };
+
+                setImagem(file);
+            }else{
+                console.log("Selecione uma imagem")
+            }
+        }
     };
 
     return (
         <>
             <Link to={'/'}>Início</Link>
             <h1 className="titulo">Anúncio do seu veículo</h1>
-
-            <label htmlFor="cassificacaoCarro">Classificação do carro: </label>
-            <input type="cassificacaoCarro" placeholder="Insira a classificação do carro" value={cassificacaoCarro} onChange={(e) => setCassificacaoCarro(e.target.value)} />
+            {/* Mudar para select */}
+            <label htmlFor="classificacaoCarro">Classificação do carro: </label>
+            <input type="text" placeholder="Insira a classificação do carro" value={classificacaoCarro} onChange={(e) => setClassificacaoCarro(e.target.value)} />
             <br />
             <label htmlFor="modeloCarro">Modelo do carro: </label>
             <input type="text" placeholder="Digite o modelo do carro" value={modeloCarro} onChange={(e) => setModeloCarro(e.target.value)} />
             <br />
             <label htmlFor="anoCarro">Ano do carro: </label>
-            <input type="anoCarro" placeholder="Digite o ano do carro" value={anoCarro} onChange={(e) => setAnoCarro(e.target.value)} />
+            <input type="text" maxLength={4} placeholder="Digite o ano do carro" value={anoCarro} onChange={(e) => setAnoCarro(e.target.value)} />
             <br />
             <label htmlFor="precoCarro">Valor do veículo: </label>
-            <input type="text" placeholder="Digite o valor do veículo" value={precoCarro} onChange={(e) => setPrecoCarro(e.target.value)}/>
+            <input type="text" maxLength={8} placeholder="Digite o valor do veículo" value={precoCarro} onChange={(e) => setPrecoCarro(e.target.value)}/>
             <br /><br/>
-            {/* adicionar limite para descricao */}
-            <textarea className="descricaoCarro" type="text" placeholder="Insira a descrição" value={descricaoCarro} onChange={(e) => setDescricaoCarro(e.target.value)}/>
+            <textarea className="descricaoCarro" type="text" maxLength={300} placeholder="Insira a descrição" value={descricaoCarro} onChange={(e) => setDescricaoCarro(e.target.value)}/>
             <br />
             <label htmlFor="imagem">Foto do veículo: </label>
             <input type="file" onChange={handleFotoChange} />
+            <br /><br />
+            {imagemPreview && <img src={imagemPreview} alt="Pré-visualização" style={{ maxWidth: '300px', height: '300px' }} />}
             <br /><br />
             <button onClick={handleSubmit}>Cadastrar</button>
 
 
             {enviado && (
-                <div>
+                <div style={{border: '3px solid white'}}>
+                    {imagem && <img src={URL.createObjectURL(imagem)} alt="Imagem do veículo" style={{ maxWidth: '300px', height: '300px' }} />}
                     <h2>Dados cadastrados:</h2>
-                    <p>Classificação: {cassificacaoCarro}</p>
+                    <p>Classificação: {classificacaoCarro}</p>
                     <p>Modelo: {modeloCarro}</p>
                     <p>Ano do veículo: {anoCarro}</p>
                     <p>Preço: {precoCarro}</p>
                     <p>Descrição: {descricaoCarro}</p>
-                    <p>Imagem: {imagem}</p>
+
                 </div>
             )}
         </>
