@@ -6,6 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto</title>
   </head>
+
+  <header>
+    <style>
+      .cabecalho {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        position: fixed; /* Torna o cabeçalho fixo */
+        top: 0; /* Fixa o cabeçalho no topo da tela */
+        width: 100%; /* Ocupa a largura total da tela */
+        z-index: 1000; /* Z-index para garantir que o cabeçalho fique acima de outros elementos */
+      }
+    </style>
+  
+    <div class="cabecalho">
+      <h1>WEBPOBRES</h1>
+      <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="/cadastroUsuario">Cadastre-se</a></li>
+        <li><a href="/">Faça seu login (Não funciona ainda)</a></li>
+      </ul>
+    </div>
+
+  </header>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
