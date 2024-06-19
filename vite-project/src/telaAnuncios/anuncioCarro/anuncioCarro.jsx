@@ -18,9 +18,13 @@ function CadastroUsuario() {
     const [precoCarro, setPrecoCarro] = useState('');
     const [descricaoCarro, setDescricaoCarro] = useState('');
     const [imagem, setImagem] = useState(null);
+    const [enviado, setEnviado] = useState(false);
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         Cadastrar(cassificacaoCarro, modeloCarro, anoCarro, precoCarro, descricaoCarro, imagem);
+        
+        e.preventDefault();
+        setEnviado(true);
     };
 
     const handleFotoChange = (e) => {
@@ -60,6 +64,19 @@ function CadastroUsuario() {
             <input type="file" onChange={handleFotoChange} />
             <br /><br />
             <button onClick={handleSubmit}>Cadastrar</button>
+
+
+            {enviado && (
+                <div>
+                    <h2>Dados cadastrados:</h2>
+                    <p>Classificação: {cassificacaoCarro}</p>
+                    <p>Modelo: {modeloCarro}</p>
+                    <p>Ano do veículo: {anoCarro}</p>
+                    <p>Preço: {precoCarro}</p>
+                    <p>Descrição: {descricaoCarro}</p>
+                    <p>Imagem: {imagem}</p>
+                </div>
+            )}
         </>
     );
 }
