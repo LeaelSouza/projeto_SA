@@ -23,7 +23,6 @@ function CadastroUsuario() {
 
   return (
     <div>
-      <Link to={'/'}>Início</Link>
       <br></br>
       <br></br>
       <h1>Cadastro</h1>

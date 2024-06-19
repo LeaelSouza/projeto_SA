@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 function TelaPrincipal(){
     return (
         <>
-        <Link to={'/'}>Início</Link>
         <h1>Tela Principal</h1>
+        <h2>Erik lindo</h2>
         </>
     )
 }

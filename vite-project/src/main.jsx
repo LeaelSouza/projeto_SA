@@ -7,6 +7,7 @@ import TelaInicio from './TelaInicial/inicio.jsx'
 import CadastroUsuario from './usuario/cadastroUsuario/cadastroUsuario.jsx'
 import TelaPrincipal from './telaPrincipal/telaPrincipal.jsx'
 import AnuncioCarro from './telaAnuncios/anuncioCarro/anuncioCarro.jsx'
+import LoginUsuario from './usuario/loginUsuario/loginUsuario.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const routes = createBrowserRouter([
       {
         path: '/anuncioCarro',
         element: <AnuncioCarro/>
+      },
+      {
+        path: '/login',
+        element: <LoginUsuario/>
       }
 ]);
 
