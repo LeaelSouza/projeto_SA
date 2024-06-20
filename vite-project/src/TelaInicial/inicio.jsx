@@ -1,18 +1,26 @@
 import { Link, Outlet } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./inicio.css";
 
 function TelaInicio(){
-    const [modoEscuro, setModoEscuro] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+      if (darkMode) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+    }, [darkMode]);
   
-function alterarModo() {
-      setModoEscuro(!modoEscuro);
-  };
+    const alterarModo = () => {
+      setDarkMode(!darkMode);
+    };
 
     return(
         <>
-        <div className={modoEscuro?'escuro': 'body'}>
-            <button onClick={alterarModo}>{modoEscuro ? 'Modo Claro' : 'Modo Escuro'}</button>
+        <div className={darkMode?'dark-mode' : 'light-mode'}>
+            <button onClick={alterarModo}>{darkMode ? 'Modo Claro' : 'Modo Escuro'}</button>
             <h1>Início</h1>
             <Link to={'/telaPrincipal'}>Tela Principal</Link>
             <br></br>
