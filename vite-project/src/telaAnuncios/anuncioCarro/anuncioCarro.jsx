@@ -20,8 +20,8 @@ function CadastroUsuario() {
     const [anoCarro, setAnoCarro] = useState('');
     const [precoCarro, setPrecoCarro] = useState('');
     const [descricaoCarro, setDescricaoCarro] = useState('');
-    const [imagem, setImagem] = useState(null);
-    const [imagemPreview, setImagemPreview] = useState(null);
+    const [imagem, setImagem] = useState(null);//Variavel que contem o file
+    const [imagemPreview, setImagemPreview] = useState(null);//Variavel que contem a string
     const [enviado, setEnviado] = useState(false);
 
     const handleSubmit = (e) => {
@@ -45,6 +45,7 @@ function CadastroUsuario() {
 
                     reader.onload = function(){
                         setImagemPreview(reader.result);
+
                         console.log(reader.result);
                     };
 
@@ -65,7 +66,14 @@ function CadastroUsuario() {
             <h1 className="titulo">Anúncio do seu veículo</h1>
             {/* Mudar para select */}
             <label htmlFor="classificacaoCarro">Classificação do carro: </label>
-            <input type="text" placeholder="Insira a classificação do carro" value={classificacaoCarro} onChange={(e) => setClassificacaoCarro(e.target.value)} />
+            {/* <input type="text" placeholder="Insira a classificação do carro" value={classificacaoCarro} onChange={(e) => setClassificacaoCarro(e.target.value)} /> */}
+            <select type="text" value={classificacaoCarro} onChange={(e) => setClassificacaoCarro(e.target.value)}>
+                <option value="aspirado">Aspirado</option>
+                <option value="supercharged">Supercharged</option>
+                <option value="projetoInacabado">Projeto Inacabado</option>
+                <option value="turbo">Turbo</option>
+                <option value="sucata">Sucata</option>
+            </select>
             <br />
             <label htmlFor="modeloCarro">Modelo do carro: </label>
             <input type="text" placeholder="Digite o modelo do carro" value={modeloCarro} onChange={(e) => setModeloCarro(e.target.value)} />
