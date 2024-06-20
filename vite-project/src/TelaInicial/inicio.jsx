@@ -11,7 +11,7 @@ function alterarModo() {
 
     return(
         <>
-        <div className={modoEscuro?'escuro': 'root'}>
+        <div className={modoEscuro?'escuro': 'body'}>
             <button onClick={alterarModo}>{modoEscuro ? 'Modo Claro' : 'Modo Escuro'}</button>
             <h1>Início</h1>
             <Link to={'/telaPrincipal'}>Tela Principal</Link>
