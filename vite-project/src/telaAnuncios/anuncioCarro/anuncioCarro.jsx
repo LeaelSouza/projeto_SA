@@ -29,6 +29,25 @@ function CadastroUsuario() {
         
         e.preventDefault();
         setEnviado(true);
+
+        const carro = {
+      
+            classificacaoCarro: classificacaoCarro,
+            modeloCarro: modeloCarro,
+            anoCarro: anoCarro,
+            precoCarro: precoCarro,
+            descricaoCarro: descricaoCarro,
+            imagem: imagemPreview
+          }
+          //post USUARIO
+          fetch('http://localhost:4300/anuncioCarro', {
+            method: 'POST',
+            headers:{
+              "Content-type": 'application/json',
+            },
+            body: JSON.stringify(carro)
+          })
+          .then(a => a.json())
     };
 
     const handleFotoChange = (e) => {

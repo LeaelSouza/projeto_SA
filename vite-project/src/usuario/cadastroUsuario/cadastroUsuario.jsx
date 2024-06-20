@@ -16,10 +16,30 @@ function CadastroUsuario() {
   const [telefone, setTelefone] = useState('');
   const [enviado, setEnviado] = useState(false);
 
+  //alterado por Talles
   const handleSubmit = (e) => {
     e.preventDefault();
     setEnviado(true);
+
+    const usuario = {
+      
+      nomeCadastroUsuario: nome,
+      emailCadastroUsuario: email,
+      senhaCadastroUsuario: senha,
+      telefoneCadastroUsuario: telefone
+    }
+
+    //post USUARIO
+    fetch('http://localhost:4300/usuario', {
+      method: 'POST',
+      headers:{
+        "Content-type": 'application/json',
+      },
+      body: JSON.stringify(usuario)
+    })
+    .then(a => a.json())
   };
+//-------------------------------------------------
 
   return (
     <div>
