@@ -62,7 +62,6 @@ function CadastroUsuario() {
 
     return (
         <>
-            <Link to={'/'}>Início</Link>
             <h1 className="titulo">Anúncio do seu veículo</h1>
             {/* Mudar para select */}
             <label htmlFor="classificacaoCarro">Classificação do carro: </label>
