@@ -68,6 +68,8 @@ function CadastroCarro() {
             <label htmlFor="precoCarro">Valor do veículo: </label>
             <input type="text" maxLength={8} placeholder="Digite o valor do veículo" value={precoCarro} onChange={(e) => setPrecoCarro(e.target.value)} />
             <br /><br/>
+            <label htmlFor="descricaoCarro">Insira a descrição do carro:</label>
+            <br />
             <textarea className="descricaoCarro" maxLength={300} placeholder="Insira a descrição" value={descricaoCarro} onChange={(e) => setDescricaoCarro(e.target.value)} />
             <br />
             <button onClick={handleSubmit}>Cadastrar</button>

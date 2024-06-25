@@ -9,7 +9,6 @@ function TelaPrincipal(){
     return (
         <>
         <h1>Tela Principal</h1>
-        <h2>Erik lindo</h2>
         </>
     )
 }
