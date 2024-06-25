@@ -3,24 +3,24 @@ import React, { useState, useEffect } from 'react';
 import "./inicio.css";
 
 function TelaInicio(){
-    const [darkMode, setDarkMode] = useState(false);
+    const [modoEscuro, setModoEscuro] = useState(false);
 
     useEffect(() => {
-      if (darkMode) {
-        document.body.classList.add('dark-mode');
+      if (modoEscuro) {
+        document.body.classList.add('modo-escuro');
       } else {
-        document.body.classList.remove('dark-mode');
+        document.body.classList.remove('modo-escuro');
       }
-    }, [darkMode]);
+    }, [modoEscuro]);
   
     const alterarModo = () => {
-      setDarkMode(!darkMode);
+      setModoEscuro(!modoEscuro);
     };
 
     return(
         <>
-        <div className={darkMode?'dark-mode' : 'light-mode'}>
-            <button onClick={alterarModo}>{darkMode ? 'Modo Claro' : 'Modo Escuro'}</button>
+        <div className={modoEscuro?'modo-escuro' : 'modo-claro'}>
+            <button onClick={alterarModo}>{modoEscuro ? 'Modo Claro' : 'Modo Escuro'}</button>
             {/* <h1>Início</h1>
             <Link to={'/telaPrincipal'}>Tela Principal</Link>
             <br></br>

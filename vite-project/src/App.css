@@ -42,12 +42,12 @@
 }
 
 /* App.css */
-.dark-mode {
+.modo-escuro {
   background-color: #333;
   color: #fff;
 }
 
-.light-mode {
+.modo-claro {
   background-color: #fff;
   color: #333;
 }
