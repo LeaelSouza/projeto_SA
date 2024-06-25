@@ -21,12 +21,14 @@ function TelaInicio(){
         <>
         <div className={darkMode?'dark-mode' : 'light-mode'}>
             <button onClick={alterarModo}>{darkMode ? 'Modo Claro' : 'Modo Escuro'}</button>
-            <h1>Início</h1>
+            {/* <h1>Início</h1>
             <Link to={'/telaPrincipal'}>Tela Principal</Link>
             <br></br>
             <Link to={'/cadastroUsuario'}>Faça seu cadastro</Link>
             <br></br>
-            <Link to={'anuncioCarro'}>Cadastro de anuncio de carros</Link>
+            <Link to={'/anuncioCarro'}>Cadastro de anuncio de carros</Link>
+            <br />
+            <Link to={'/anuncioPeca'}>Cadastro de peça</Link> */}
             <Outlet />
         </div>
         </>

@@ -6,7 +6,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import TelaInicio from './TelaInicial/inicio.jsx'
 import CadastroUsuario from './usuario/cadastroUsuario/cadastroUsuario.jsx'
 import TelaPrincipal from './telaPrincipal/telaPrincipal.jsx'
-import AnuncioCarro from './telaAnuncios/anuncioCarro/anuncioCarro.jsx'
+import CadastroCarro from './telaAnuncios/anuncioCarro/anuncioCarro.jsx'
+import AnuncioPeca from './telaAnuncios/anuncioPeca/anuncioPeca.jsx'
 import LoginUsuario from './usuario/loginUsuario/loginUsuario.jsx'
 
 const routes = createBrowserRouter([
@@ -24,7 +25,11 @@ const routes = createBrowserRouter([
       },
       {
         path: '/anuncioCarro',
-        element: <AnuncioCarro/>
+        element: <CadastroCarro/>
+      },
+      {
+        path: '/anuncioPeca',
+        element: <AnuncioPeca/>
       },
       {
         path: '/login',

@@ -12,7 +12,7 @@ function Cadastrar(classificacao, modeloCarro, anoCarro, precoCarro, descricao) 
     });
 }
 
-function CadastroUsuario() {
+function CadastroCarro() {
     const [classificacaoCarro, setClassificacaoCarro] = useState('');
     const [modeloCarro, setModeloCarro] = useState('');
     const [anoCarro, setAnoCarro] = useState('');
@@ -86,4 +86,4 @@ function CadastroUsuario() {
     );
 }
 
-export default CadastroUsuario;
+export default CadastroCarro;
