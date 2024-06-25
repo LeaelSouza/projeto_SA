@@ -49,7 +49,9 @@ function AnuncioPeca() {
             <br />
             <label htmlFor="precoPeca">Preço da peça:</label>
             <input type="text" placeholder="Valor da peca" value={precoPeca} onChange={(e) => setPrecoPeca(e.target.value)} />
-            <br/>
+            <br/><br />
+            <label htmlFor="descricaoPeca">Insira a descrição da peça:</label>
+            <br />
             <textarea className="descricaoPeca" maxLength={300} placeholder="Insira a descrição" value={descricaoPeca} onChange={(e) => setDescricaoPeca(e.target.value)} />
             <br />
             <button onClick={handleSubmit}>Cadastrar</button>

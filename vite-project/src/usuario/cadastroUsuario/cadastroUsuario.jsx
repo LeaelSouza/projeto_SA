@@ -55,10 +55,10 @@ function CadastroUsuario() {
         <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
         <br></br>
         <label htmlFor="senha"><b>Senha: </b></label>
-        <input type="text" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Sua senha até 9 dígitos" />
+        <input type="password" value={senha} maxLength={9} onChange={(e) => setSenha(e.target.value)} placeholder="Sua senha até 9 dígitos" />
         <br></br>
         <label htmlFor="telefone"><b>Telefone: </b></label>
-        <input type="text" value={telefone} onChange={(e) => setTelefone(e.target.value)} placeholder="Digite seu telefone" />
+        <input type="text" value={telefone} maxLength={11} onChange={(e) => setTelefone(e.target.value)} placeholder="Digite seu telefone" />
         <br></br>
         <br></br>
         <button type="submit">Cadastrar</button>
