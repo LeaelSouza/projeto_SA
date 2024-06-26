@@ -48,8 +48,9 @@ function CadastroCarro() {
 
     return (
         <>
+            <br></br>
             <h1 className="titulo">Anúncio do seu veículo</h1>
-            <label htmlFor="classificacaoCarro">Classificação do carro: </label>
+            <label htmlFor="classificacaoCarro"><b>Classificação do carro: </b></label>
             <select value={classificacaoCarro} onChange={(e) => setClassificacaoCarro(e.target.value)}>
                 <option value="aspirado">Selecione</option>
                 <option value="aspirado">Aspirado</option>
@@ -59,19 +60,19 @@ function CadastroCarro() {
                 <option value="sucata">Sucata</option>
             </select>
             <br />
-            <label htmlFor="modeloCarro">Modelo do carro: </label>
+            <label htmlFor="modeloCarro"><b>Modelo do carro: </b></label>
             <input type="text" placeholder="Digite o modelo do carro" value={modeloCarro} onChange={(e) => setModeloCarro(e.target.value)} />
             <br />
-            <label htmlFor="anoCarro">Ano do carro: </label>
+            <label htmlFor="anoCarro"><b>Ano do carro: </b></label>
             <input type="text" maxLength={4} placeholder="Digite o ano do carro" value={anoCarro} onChange={(e) => setAnoCarro(e.target.value)} />
             <br />
-            <label htmlFor="precoCarro">Valor do veículo: </label>
+            <label htmlFor="precoCarro"><b>Valor do veículo: </b></label>
             <input type="text" maxLength={8} placeholder="Digite o valor do veículo" value={precoCarro} onChange={(e) => setPrecoCarro(e.target.value)} />
             <br /><br/>
-            <label htmlFor="descricaoCarro">Insira a descrição do carro:</label>
-            <br />
+            <label htmlFor="descricaoCarro"><b>Insira a descrição do carro: </b></label>
+            <br/>
             <textarea className="descricaoCarro" maxLength={300} placeholder="Insira a descrição" value={descricaoCarro} onChange={(e) => setDescricaoCarro(e.target.value)} />
-            <br />
+            <br/>
             <button onClick={handleSubmit}>Cadastrar</button>
 
             {enviado && (

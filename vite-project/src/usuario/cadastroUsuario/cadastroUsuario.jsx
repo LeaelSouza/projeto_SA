@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 function CadastroUsuario() {
+
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');

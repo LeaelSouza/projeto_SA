@@ -30,6 +30,8 @@ function TelaInicio(){
             <br />
             <Link to={'/anuncioPeca'}>Cadastro de peça</Link> */}
             <Outlet />
+        <h1><b>Seja bem-vindo ao WebPobres!</b></h1>
+        <h2>Compra e venda de veículos e peças em um só lugar.</h2>
         </div>
         </>
     )
