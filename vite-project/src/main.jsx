@@ -9,7 +9,6 @@ import TelaPrincipal from './telaPrincipal/telaPrincipal.jsx'
 import CadastroCarro from './telaAnuncios/anuncioCarro/anuncioCarro.jsx'
 import AnuncioPeca from './telaAnuncios/anuncioPeca/anuncioPeca.jsx'
 import LoginUsuario from './usuario/loginUsuario/loginUsuario.jsx'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const routes = createBrowserRouter([
   {
