@@ -44,13 +44,13 @@ function AnuncioPeca() {
         <>
             <h1 className="titulo">Anúncio da sua peça</h1>
             <br />
-            <label htmlFor="tituloPeca">Nome da peça: </label>
+            <label htmlFor="tituloPeca"><b>Nome da peça: </b></label>
             <input type="text" placeholder="Digite o nome da peça" value={tituloPeca} onChange={(e) => setTituloPeca(e.target.value)} />
             <br />
-            <label htmlFor="precoPeca">Preço da peça:</label>
+            <label htmlFor="precoPeca"><b>Preço da peça: </b></label>
             <input type="text" placeholder="Valor da peca" value={precoPeca} onChange={(e) => setPrecoPeca(e.target.value)} />
             <br/><br />
-            <label htmlFor="descricaoPeca">Insira a descrição da peça:</label>
+            <label htmlFor="descricaoPeca"><b>Insira a descrição da peça: </b></label>
             <br />
             <textarea className="descricaoPeca" maxLength={300} placeholder="Insira a descrição" value={descricaoPeca} onChange={(e) => setDescricaoPeca(e.target.value)} />
             <br />
