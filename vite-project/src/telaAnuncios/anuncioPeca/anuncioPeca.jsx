@@ -56,14 +56,14 @@ function AnuncioPeca() {
             <br />
             <button onClick={handleSubmit}>Cadastrar</button>
 
-            {enviado && (
+            {/* {enviado && (
                 <div style={{border: '3px solid white'}}>
                     <h2>Dados cadastrados:</h2>
                     <p>Titulo: {tituloPeca}</p>
                     <p>Preço: {precoPeca}</p>
                     <p>Descriçao: {descricaoPeca}</p>
                 </div>
-            )}
+            )} */}
         </>
     );
 }

@@ -40,6 +40,15 @@ function CadastroUsuario() {
     })
     .then(a => a.json())
   };
+
+  // function limparTexto() {
+  //   setNome('');
+  //   setEmail('');
+  //   setSenha('');
+  //   setTelefone('');
+  // }
+
+
 //-------------------------------------------------
 
   return (
@@ -50,24 +59,25 @@ function CadastroUsuario() {
       <form onSubmit={handleSubmit}>
 
         <label htmlFor="nome"><b>Nome: </b></label>
-        <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Digite seu nome completo" />
+        <input required type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Digite seu nome completo" />
         <br></br>
         <label htmlFor="email"><b>Email: </b></label>
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
+        <input required type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
         <br></br>
         <label htmlFor="senha"><b>Senha: </b></label>
-        <input type="password" value={senha} maxLength={9} onChange={(e) => setSenha(e.target.value)} placeholder="Sua senha até 9 dígitos" />
+        <input required type="password" value={senha} maxLength={9} onChange={(e) => setSenha(e.target.value)} placeholder="Sua senha até 9 dígitos" />
         <br></br>
         <label htmlFor="telefone"><b>Telefone: </b></label>
-        <input type="text" value={telefone} maxLength={11} onChange={(e) => setTelefone(e.target.value)} placeholder="Digite seu telefone" />
+        <input required type="text" value={telefone} maxLength={11} onChange={(e) => setTelefone(e.target.value)} placeholder="Digite seu telefone" />
         <br></br>
         <br></br>
         <button type="submit">Cadastrar</button>
+
       </form>
 
   {/* DADOS NA TELA */}
 
-    {enviado && (
+    {/* {enviado && (
       <div>
         <h2>Dados cadastrados:</h2>
         <p>Nome: {nome}</p>
@@ -75,7 +85,7 @@ function CadastroUsuario() {
         <p>Senha: {senha}</p>
         <p>Telefone: {telefone}</p>
       </div>
-      )}
+      )} */}
     </div>
   );
 }

@@ -73,7 +73,7 @@ function CadastroCarro() {
             <br/>
             <button onClick={handleSubmit}>Cadastrar</button>
 
-            {enviado && (
+            {/* {enviado && (
                 <div style={{ border: '3px solid white' }}>
                     <h2>Dados cadastrados:</h2>
                     <p>Classificação: {classificacaoCarro}</p>
@@ -82,7 +82,7 @@ function CadastroCarro() {
                     <p>Preço: {precoCarro}</p>
                     <p>Descrição: {descricaoCarro}</p>
                 </div>
-            )}
+            )} */}
         </>
     );
 }
