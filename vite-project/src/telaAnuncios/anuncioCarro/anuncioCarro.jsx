@@ -22,7 +22,7 @@ function CadastroCarro() {
 
     const handleSubmit = (e) => {
         Cadastrar(classificacaoCarro, modeloCarro, anoCarro, precoCarro, descricaoCarro);
-        
+
         e.preventDefault();
         setEnviado(true);
 
@@ -34,16 +34,14 @@ function CadastroCarro() {
             descricaoCarro: descricaoCarro
         };
 
-        fetch('http://localhost:4300/api/anuncioCarro', {
+        fetch('http://localhost:4300/anuncioCarro', {
             method: 'POST',
             headers: {
                 "Content-type": 'application/json',
             },
             body: JSON.stringify(carro)
         })
-        .then(a => a.json())
-        .then(response => console.log(response))
-        .catch(error => console.log('Ocorreu um erro: ', error));
+            .then(a => a.json())
     };
 
     return (
@@ -67,15 +65,15 @@ function CadastroCarro() {
             <br />
             <label htmlFor="precoCarro">Valor do veículo: </label>
             <input type="text" maxLength={8} placeholder="Digite o valor do veículo" value={precoCarro} onChange={(e) => setPrecoCarro(e.target.value)} />
-            <br /><br/>
+            <br /><br />
             <label htmlFor="descricaoCarro">Insira a descrição do carro:</label>
             <br />
-            <textarea className="descricaoCarro" maxLength={300} placeholder="Insira a descrição" value={descricaoCarro} onChange={(e) => setDescricaoCarro(e.target.value)} />
+            <textarea className="descricaoCarro" type="text" maxLength={300} placeholder="Insira a descrição" value={descricaoCarro} onChange={(e) => setDescricaoCarro(e.target.value)} />
             <br />
             <button onClick={handleSubmit}>Cadastrar</button>
 
             {enviado && (
-                <div style={{border: '3px solid white'}}>
+                <div style={{ border: '3px solid white' }}>
                     <h2>Dados cadastrados:</h2>
                     <p>Classificação: {classificacaoCarro}</p>
                     <p>Modelo: {modeloCarro}</p>

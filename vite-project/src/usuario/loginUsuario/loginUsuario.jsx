@@ -13,18 +13,18 @@ function LoginUsuario() {
 
             <label htmlFor="email"><b>Email: </b></label>
             <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Digite seu email"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu email"
             />
             <br></br>
             <label htmlFor="senha"><b>Senha: </b></label>
             <input
-            type="senha"
-            id="senha"
-            name="senha"
-            placeholder="Digite sua senha"
+                type="senha"
+                id="senha"
+                name="senha"
+                placeholder="Digite sua senha"
             />
             <br></br>
             <br></br>
