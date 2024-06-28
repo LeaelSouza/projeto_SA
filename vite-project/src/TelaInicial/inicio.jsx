@@ -3,7 +3,11 @@ import React, { useState, useEffect } from 'react';
 import "./inicio.css";
 
 function TelaInicio() {
-  const [modoEscuro, setModoEscuro] = useState(false);
+  const [modoEscuro, setModoEscuro] = useState(() => {
+    // Recupera o estado do modo escuro do localStorage ou define como false (claro) por padrão
+    const modoSalvo = localStorage.getItem('modoEscuro');
+    return modoSalvo ? JSON.parse(modoSalvo) : false;
+  });
 
   useEffect(() => {
     if (modoEscuro) {
@@ -11,6 +15,8 @@ function TelaInicio() {
     } else {
       document.body.classList.remove('modo-escuro');
     }
+    // Salva o estado atual no localStorage
+    localStorage.setItem('modoEscuro', JSON.stringify(modoEscuro));
   }, [modoEscuro]);
 
   const alterarModo = () => {

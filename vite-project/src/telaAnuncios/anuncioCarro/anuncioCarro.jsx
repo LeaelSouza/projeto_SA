@@ -46,6 +46,14 @@ function CadastroCarro() {
 
     return (
         <>
+        <div className="cabecalho">
+        <ul>
+        <li><a href="/telaPrincipal">Anúncios</a></li>
+        </ul>
+            <ul>
+            <li><a href="/anuncioPeca">Anúncio peça</a></li>
+            </ul>
+    </div>
             <br></br>
             <h1 className="titulo">Anúncio do seu veículo</h1>
             <label htmlFor="classificacaoCarro"><b>Classificação do carro: </b></label>
@@ -75,12 +83,7 @@ function CadastroCarro() {
 
             {enviado && (
                 <div style={{ border: '3px solid white' }}>
-                    <h2>Dados cadastrados:</h2>
-                    <p>Classificação: {classificacaoCarro}</p>
-                    <p>Modelo: {modeloCarro}</p>
-                    <p>Ano do veículo: {anoCarro}</p>
-                    <p>Preço: {precoCarro}</p>
-                    <p>Descrição: {descricaoCarro}</p>
+                    <h2 className="sucesso">Veículo cadastrado</h2>
                 </div>
             )}
         </>

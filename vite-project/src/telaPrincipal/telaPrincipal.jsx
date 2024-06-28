@@ -8,7 +8,16 @@ import { Link } from "react-router-dom";
 function TelaPrincipal(){
     return (
         <>
-        <h1>Tela Principal</h1>
+        <h1>Anúncios</h1>
+        <br /><br />
+        <div className="cabecalho">
+        <ul>
+        <li><a href="/anuncioPeca">Cadastro de peças</a></li>
+        </ul>
+            <ul>
+            <li><a href="/anuncioCarro">Cadastro de carros</a></li>
+            </ul>
+    </div>
         </>
     )
 }

@@ -3,3 +3,16 @@
     border-radius: 5px ;
     color: green;
 }
+
+.cabecalho {
+    background-color: rgb(36, 36, 36);
+    color: #fff;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    position: fixed; /* Torna o cabeçalho fixo */
+    top: 0; /* Fixa o cabeçalho no topo da tela */
+    width: 100%; /* Ocupa a largura total da tela */
+    z-index: 1000; /* Z-index para garantir que o cabeçalho fique acima de outros elementos */
+  }
+
