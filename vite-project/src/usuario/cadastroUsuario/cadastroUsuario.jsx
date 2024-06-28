@@ -47,19 +47,20 @@ function CadastroUsuario() {
       <h1>Cadastro</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="nome"><b>Nome: </b></label>
-        <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Digite seu nome completo" />
+        <input required type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Digite seu nome completo" />
         <br></br>
         <label htmlFor="email"><b>Email: </b></label>
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
+        <input required type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
         <br></br>
         <label htmlFor="senha"><b>Senha: </b></label>
         <input type="password" value={senha} maxLength={30} onChange={(e) => setSenha(e.target.value)} placeholder="Sua senha até 30 dígitos" />
         <br></br>
         <label htmlFor="telefone"><b>Telefone: </b></label>
-        <input type="text" value={telefone} maxLength={11} onChange={(e) => setTelefone(e.target.value)} placeholder="Digite seu telefone" />
+        <input required type="text" value={telefone} maxLength={11} onChange={(e) => setTelefone(e.target.value)} placeholder="Digite seu telefone" />
         <br></br>
         <br></br>
         <button type="submit">Cadastrar</button>
+
       </form>
     </div>
   );

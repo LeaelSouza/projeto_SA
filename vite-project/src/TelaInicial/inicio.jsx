@@ -25,6 +25,7 @@ function TelaInicio() {
 
   return (
     <>
+      <br></br>
       <div className={modoEscuro ? 'modo-escuro' : 'modo-claro'}>
         <button onClick={alterarModo}>{modoEscuro ? 'Modo Claro' : 'Modo Escuro'}</button>
 

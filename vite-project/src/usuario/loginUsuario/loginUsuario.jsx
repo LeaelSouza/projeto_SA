@@ -38,15 +38,18 @@ function LoginUsuario() {
 
     return (
         <div>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="email"><b>Email: </b></label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                    <br></br>
-                    <label htmlFor="senha"><b>Senha: </b></label>
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
-                    <br></br><br></br>
-                    <button type="submit">Entrar</button>
-                </form>
+            <h1>Login</h1>
+
+            <form onSubmit={handleSubmit}>
+
+                <label htmlFor="email"><b>Email: </b></label>
+                <input required type="email" id="email" name="email" placeholder="Digite seu email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <br></br>
+                <label htmlFor="senha"><b>Senha: </b></label>
+                <input required type="senha" id="senha" name="senha" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
+                <br></br><br></br>
+                <button type="submit">Entrar</button>
+            </form>
         </div>
     )
 }

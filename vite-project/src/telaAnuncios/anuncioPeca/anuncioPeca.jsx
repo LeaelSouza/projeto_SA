@@ -68,7 +68,7 @@ function AnuncioPeca() {
                 <div style={{ border: '3px solid white' }}>
                     <h2 className="sucesso">Veículo cadastrado</h2>
                 </div>
-            )}
+            )} */}
         </>
     );
 }
